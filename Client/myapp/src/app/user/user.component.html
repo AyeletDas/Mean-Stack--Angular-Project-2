@@ -1,0 +1,83 @@
+<p>user works! I belong to the main page</p>
+
+<div class="main-container">
+    <div class="div1style">
+      <br />
+      <div>
+        Search by name or email
+        Search: <input class="Search" (input)="search($event)">
+        <button (click)="toggleAddUser()">Add New User</button><br /><br />
+      </div>
+      <br />
+  
+      <div *ngIf="isAddingUser" class="add-user-form">
+        <h3>Add New User</h3>
+        Name: <input type="text" [(ngModel)]="newUser.name"><br />
+        Email: <input type="text" [(ngModel)]="newUser.email"><br />
+        Street: <input type="text" [(ngModel)]="newUser.street"><br />
+        City: <input type="text" [(ngModel)]="newUser.city"><br />
+        Zipcode: <input type="number" [(ngModel)]="newUser.Zipcode"><br />
+        <button (click)="saveNewUser()">Save</button>
+        <button (click)="toggleAddUser()">Cancel</button>
+      </div>
+  
+      <div *ngFor="let user of filteredUsers" class="scroll-container" (click)="selectUser(user)">
+        <p (click)="showPostAndTasks(user)">ID : {{user._id}}</p>
+        <p>Name: <input name="name" type="text" [(ngModel)]="user.name"></p>
+        <p>Email: <input name="email" type="text" [(ngModel)]="user.email"></p>
+        <div class="button-row">
+          <button class="OtherDataButton" (click)="toggleOtherData(user)">Other Data</button>
+          <button class="UpdateButton" (click)="updateUser(user)">Update</button>
+          <button class="DeleteButton" (click)="deleteUser()">Delete</button>
+        </div>
+        <div class="div2" *ngIf="isOtherDataVisible && selectedUser._id === user._id">
+          <p>Street: <input class="Streetinput" name="street" type="text" placeholder="Enter Street" [(ngModel)]="user.street"></p>
+          <p>City: <input class="Cityinput" name="city" type="text" placeholder="Enter City" [(ngModel)]="user.city"></p>
+          <p>Zipcode: <input class="Zipcodeinput" name="zipcode" type="number" placeholder="Zipcode" [(ngModel)]="user.zipcode"></p>
+        </div>
+        
+        <div>
+          <br /><br />
+        </div>
+        <br /><br />
+      </div>
+  
+      <div *ngIf="isDetailsVisible" class="right-side">
+        <h1> Right-Side</h1>
+        <h4>Tasks</h4>
+        <div *ngIf="!isAddingTask">
+          <div *ngFor="let task of selectedUser.Tasks; let i = index" class="Tasks-Title-Completed-button">
+            <h3 class="User-Details-for">User Details for {{selectedUser._id}}</h3>
+            Title: {{ task.Title }}
+            <p>Completed: {{ task.Completed ? 'Yes' : 'No' }}</p>
+            <button class="DeleteButton" (click)="deleteTask(task._id)">Delete Task</button>
+          </div>
+          <button class="UpdateButton" (click)="addTask()">Add Tasks</button><br /><br />
+        </div>
+        <div *ngIf="isAddingTask">
+          Title: <input type="text" [(ngModel)]="newTaskTitle"><br />
+          Completed: <input type="checkbox" [(ngModel)]="newTaskCompleted"><br />
+          <button class="SaveButton" (click)="saveTask()">Save</button>
+          <button class="CancelButton" (click)="cancelAddTask()">Cancel</button>
+        </div>
+  
+        <h4>Posts</h4>
+        <div *ngIf="!isAddingPost">
+          <div *ngFor="let post of selectedUser.Posts" class="Tasks-Title-Completed-button">
+            Title: {{post.Title}}<br /><br />
+            Body: {{post.Body}}<br />
+            <button class="DeleteButton" (click)="deletePost(post._id)">Delete Posts</button>
+          </div>
+          <button class="UpdateButton" (click)="addPost()">Add Posts</button><br /><br />
+        </div>
+        <div *ngIf="isAddingPost">
+          Title: <input type="text" [(ngModel)]="newPostTitle"><br />
+          Body: <input type="text" [(ngModel)]="newPostBody"><br />
+          <button class="SaveButton" (click)="savePost()">Save</button>
+          <button class="CancelButton" (click)="cancelAddPost()">Cancel</button>
+        </div>
+        <button class="CloseButton" (click)="closeRightSide()">Close Right-Side</button>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,148 @@
+.div1style {
+    border-radius: 10px;
+    width: 600px;
+    border: 4px solid rgb(77, 77, 77);
+    background-color: rgb(205, 230, 236);
+    padding: 20px;
+    margin: 20px auto;
+    margin-left: 50px;
+    box-sizing: border-box;
+}
+
+.scroll-container {
+    min-height: 9em;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    border: 2px solid rgb(77, 77, 77);
+    border-radius: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+/* הוסף כמה סגנונות נוספים עבור הכפתורים */
+.button-row {
+    display: flex;
+    gap: 10px;
+    /* רווח בין הכפתורים */
+    margin-top: 10px;
+    /* רווח מעל הכפתורים */
+}
+
+button {
+    margin: 0;
+    /* מסיר את הרווחים של הכפתורים */
+}
+
+.Search {
+    width: 150px;
+    background-color: rgb(224, 224, 240);
+    border: 2px solid rgb(77, 77, 77);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.div2 {
+    border-radius: 18px;
+    border: 2px solid rgb(77, 77, 77);
+    background-color: gainsboro;
+    padding: 10px;
+    margin: 20px 0;
+}
+
+.Cityinput,
+.Streetinput,
+.Zipcodeinput {
+    display: block;
+    margin: 10px 0;
+}
+
+button {
+    margin: 5px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.Addbutton {
+    background-color: rgb(255, 214, 80);
+}
+
+.DeleteButton {
+    background-color: rgb(255, 118, 80);
+}
+
+.UpdateButton {
+    background-color: rgb(103, 233, 96);
+}
+
+.OtherDataButton {
+    background-color: rgb(187, 208, 186);
+}
+
+.red-border {
+    border: 2px solid red;
+}
+
+.green-border {
+    border: 2px solid green;
+}
+
+.details-container {
+    width: 50%;
+    border-left: 2px solid #ccc;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: 100px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.main-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.green-border {
+    border: 2px solid green;
+  }
+  
+  .red-border {
+    border: 2px solid red;
+  }
+  .right-side{
+    position: fixed; /*מציין שהדיב יישאר במקום שקבעת בהתחלה ביחס לחלון הדפדפן.*/
+    top: 0; /*חלק עליון */
+    right: 20%; /*צד ימין */
+    width: 30%; /* רוחב*/
+    height: 90vh; /* גובה*/
+    overflow: scroll; /* לא מסתיר את התוכן שעובר מחוץ לגבולות הדיב.*/
+    background-color: rgb(224, 224, 240);
+  }
+  .CloseButton{
+    background-color: rgb(158, 177, 177);
+  }
+  .Tasks-Title-Completed-button{
+    border: 2px solid rgb(111, 76, 151);
+    margin: 10px 0;
+  }
+
+  .Posts-Title-Completed-button{
+    border: 2px solid rgb(111, 76, 151);
+    margin: 10px 0;
+  }
+.User-Details-for{
+    color: rgb(62, 13, 28);
+}
+
+

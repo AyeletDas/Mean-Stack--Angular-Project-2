@@ -1,0 +1,19 @@
+.h1style{
+    position: relative; 
+    left: 90px;
+    color: rgb(161, 184, 160);
+    background-color:rgb(198, 233, 221);
+    width: 400px;
+
+}
+
+.stylediv{
+    border-radius: 10px;
+    width: 400px;  /* צמצמתי את הרוחב ל-400px */
+    border: 4px solid  rgb(77, 77, 77);
+    background-color: rgb(205, 230, 236);
+    padding: 20px;
+    margin: 20px auto;
+    margin-left: 50px;  /* הזזתי את הקונטיינר יותר ימינה */
+}
+
